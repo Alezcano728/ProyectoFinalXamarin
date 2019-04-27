@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -140,7 +140,9 @@ namespace Proyecto_Xamarin.Views
                         CUE_DESCRIPCION = txtDescripcionMOD.Text,
                         CUE_MONEDA = txtMonedaMOD.Text,
                         CUE_ESTADO = txtEstadoMOD.Text,
+                        CUE_SALDO  = Convert.ToDecimal(txtSaldoMOD.Text),
                         USU_CODIGO = App.UsuarioActual.USU_CODIGO
+
                     };
 
                     eCuentaIngresada = await eCuentaManager.Actualizar(eCuenta);
@@ -150,6 +152,7 @@ namespace Proyecto_Xamarin.Views
                         txtMonedaMOD.Text = string.Empty;
                         txtDescripcionMOD.Text = string.Empty;
                         txtEstadoMOD.Text = string.Empty;
+                        txtSaldoMOD.Text = string.Empty;
                         txtCodigo.Text = string.Empty;
 
                         await DisplayAlert("Información", "Cuenta Actualizada Correctamente", "Ok");
@@ -178,7 +181,7 @@ namespace Proyecto_Xamarin.Views
             try
             {
 
-                if (string.IsNullOrEmpty(txtDescripcionMOD.Text) || string.IsNullOrEmpty(txtMonedaMOD.Text) || string.IsNullOrEmpty(txtEstadoMOD.Text))
+                if (string.IsNullOrEmpty(txtDescripcionMOD.Text) || string.IsNullOrEmpty(txtMonedaMOD.Text) || string.IsNullOrEmpty(txtEstadoMOD.Text) || string.IsNullOrEmpty(txtSaldoMOD.Text))
                 {
 
                     Correcto = false;
